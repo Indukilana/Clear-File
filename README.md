@@ -2,4 +2,8 @@
 
 Run this script as below.
 
-./nohupclear.sh or sh nohupclear.sh
+./nohupclear.sh
+
+or 
+
+sh nohupclear.sh
