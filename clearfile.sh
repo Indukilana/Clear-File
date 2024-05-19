@@ -9,7 +9,7 @@ LOG_DIR(){
     LOG_OUT="$app_home/$dir/nohupclear.log"
 
     # Define the log file names
-    NOHUP_FILES=("nohup.out" "nohup_file.out")  
+    NOHUP_FILES=("clearfile.out" "clear_file.out")  
 
     # Loop through each log file
     for CHECK in "${NOHUP_FILES[@]}"; do
@@ -20,9 +20,9 @@ LOG_DIR(){
         if [ -f "$NOHUP_PATH" ]; then
             # Truncate the log file
             cat /dev/null > "$NOHUP_PATH"
-            echo "Contents of $NOHUP_PATH cleared." >> "$LOG_OUT"
+            echo "$(date '+%Y-%m-%d %H:%M:%S') - Contents of $NOHUP_PATH cleared." >> "$LOG_OUT"
         else
-            echo "Log file $NOHUP_PATH not found." >> "$LOG_OUT"
+            echo "$(date '+%Y-%m-%d %H:%M:%S') - Log file $NOHUP_PATH not found." >> "$LOG_OUT"
         fi
     done
 }
